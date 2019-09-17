@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- title에 불필요한 문자를 적어주는것은 스크린리더기 , 시각장애인에게 혼란을 야기할 수 있다. -->
+  <title>이디야(Ediya)</title>
+</head>
+
+<body>
+  <div role="banner">
+    <h1 class="brand"><a href="#">EDIYA COFFEE</a></h1>
+    <!-- 몇몇 시각장애인들은 title을 읽지 않기 떄문에 중복으로 사용하엿다. -->
+    <button title="메뉴 열기" aria-label="메뉴 열기">
+      <span class="ir"></span>
+    </button>
+    <div role="navigation">
+      <h2 class="a11y-hidden">메인 메뉴</h2>
+      <!-- aria-hidden : 요소를 읽지 않고 접근할수 있음. -->
+      <button title="메뉴 닫기" aria-label="메뉴 닫기"><span aria-hidden="true">X</span></button>
+    </div>
+  </div>
+
+  <div role="main">
+    <h2 class="a11y-hidden">음료 정보</h2>
+    <ul>
+      <li>
+        <!-- 대략적인 음료정보 -->
+        <a href="#" role="button" aria-haspopup="dialog" arai-pressed="false">
+          <figure>
+            <img src="./images/hot-cherry-blossoms-latte.png" alt="">
+            <figcaption>HOT 벚꽃라떼</figcaption>
+          </figure>
+        </a>
+        <!-- 세부적인 음료정보 aria-lablledby=menu1 -->
+        <div role="dialog" aria-modal="true" aria-labelledby="menu1">
+            <h3 id="menu1">HOT 벚꽃라떼 <span lang="en">Cherry Blossom Latte</span></h3>
+            <div class=""></div>
+            <button aria-label="음료 상세 정보 닫기"><span aria-hidden="true">X</span></button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div role="footer" class="a11y-hidden">
+
+  </div>
+
+  <!--  
+  <header >헤더</header>
+  <main >메인 콘텐츠</main>
+  <footer class="a11y-hidden">푸터</footer> 
+-->
+</body>
+
+</html>
