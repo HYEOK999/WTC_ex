@@ -6,9 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- title에 불필요한 문자를 적어주는것은 스크린리더기 , 시각장애인에게 혼란을 야기할 수 있다. -->
   <title>이디야(Ediya)</title>
+  <style>
+    .a11y-hidden{
+      background-color: #f00;
+      position: absolute; /* 레이아웃 띄움 */
+      /* top값에 음수를 주어 화면에 감추어버림. 단, 접근성 관점에서 문제가 있다. 스크린리더 사용시 갑자기 상단으로 올라가버린다.  */ 
+      /* top : -9999em;   */
+      width : 1px; /* 1px 할당한 이유 최소크기로 지정해야 스크린리더기에서 읽을 수 있다.*/
+      height : 1px; 
+      overflow: hidden;
+      clip: rect(0,0,0,0); 
+      clip-path : polygon(0 0, 0 0, 0 0);
+      white-space: nowrap;
+    }
+  </style>
 </head>
 
 <body>
+  <h1 class="brand a11y-hidden">WTC...</h1>
   <div role="banner">
     <h1 class="brand"><a href="#">EDIYA COFFEE</a></h1>
     <!-- 몇몇 시각장애인들은 title을 읽지 않기 떄문에 중복으로 사용하엿다. -->
