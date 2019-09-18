@@ -30,11 +30,20 @@
  
  /* --------------------------------------------
   * 헤더 디자인 */
+
+ .box{
+  height: 180px;
+  background: pink;
+}
  
  .app-header {
-  position: fixed;
+  /* height: 100vh; */
+  /* position: sticky;  */
+  /* body 영역의 top이 0이되는 순간 layer가 된다.*/
+ position: fixed;
   z-index: 600;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   display: flex;
@@ -139,6 +148,10 @@
   font-size: 40px;
   line-height: 0.5;
   transition: all 0.4s ease;
+ }
+
+ .ediya-menu__item figcaption{
+   user-select: all;
  }
  
  .app-navigation .button.is-close-menu:focus {
